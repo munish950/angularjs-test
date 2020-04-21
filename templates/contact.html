@@ -58,24 +58,29 @@
         </div>
     </div>
 
+    <div class="col-12 col-md-8 col-lg-6 pb-5">
+    <div class="search-bar">
+        <input class="form-control" ng-model="searchText.name" type="text" placeholder="Search" aria-label="Search">
+    </div>
     <table class="table">
-    <thead>
-        <tr>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="userInfo in users">
-        <td>{{userInfo.name}}</td>
-        <td>{{userInfo.gender}}</td>
-        <td>
-            <i class="fas fa-trash-alt" ng-click="onDelete(users.indexOf(userInfo))"></i> &nbsp;&nbsp;
-            <a ng-href="#!/contacts/{{$index}}"> <i class="fas fa-info-circle" ></i> </a>
-            <!-- <i class="fas fa-user-edit" ng-click="onEdit(users.indexOf(userInfo))"></i> -->
-        </td>
-        </tr>
-    </tbody>
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="userInfo in users | filter: searchText">
+            <td>{{userInfo.name}}</td>
+            <td>{{userInfo.gender | gender}}</td>
+            <td>
+                <i class="fas fa-trash-alt" ng-click="onDelete(users.indexOf(userInfo))"></i> &nbsp;&nbsp;
+                <a ng-href="#!/contacts/{{$index}}"> <i class="fas fa-info-circle" ></i> </a>
+                <!-- <i class="fas fa-user-edit" ng-click="onEdit(users.indexOf(userInfo))"></i> -->
+            </td>
+            </tr>
+        </tbody>
     </table>
+    </div>
 </div>
