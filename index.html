@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-    <head>
-        <title>AngularJs App</title>
-        <script src="js/angular.js"></script>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/angular-route.min.js"></script>
+  <head>
+    <title>AngularJs App</title>
+    <script src="js/angular.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
 
-        <script src="js/app.js"></script>
-        <script src="filter/filter.js"></script>
-       
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
-        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" 
-        crossorigin="anonymous">
-    </head>
-    <body>
-      <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href='#''>My App</a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li class="active"><a href='#!/home'>Home</a></li>
-              <li><a href='#!/contacts'>Contacts</a></li>
-            </ul>
-          </div>
-      </nav>
-        <ng-view></ng-view>        
-    </body>
+    <script src="js/app.js"></script>
+    <script src="routes.js"></script>
+    <script src="filter/filter.js"></script>
+    
+    <script src="directives/textDirective.js"></script>
+    <script src="controllers/homeController.js"></script>
+    <script src="controllers/contactController.js"></script>
+    <script src="controllers/nestedController.js"></script>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" 
+    crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href='#''>My App</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href='#!/home'>Home</a></li>
+          <li><a href='#!/contacts'>Contacts</a></li>
+          <li><a href='#!/nested-test'>Nested Test</a></li>
+        </ul>
+      </div>
+    </nav>
+      <ng-view></ng-view>        
+  </body>
 </html>

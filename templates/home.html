@@ -1,3 +1,12 @@
-<div class="container" ng-controller="homeController">
+<div class="container">
     <h2>Welcome {{ title }}</h2>
+
+    <!--<div text-directive></div>-->
+    <text-directive></text-directive>
+<!--
+    Create directory to process element and create dropdown list
+-->
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="student in students">{{student.name}} | {{student.age}} | {{student.city}}</li>
+    </ul>
 </div>

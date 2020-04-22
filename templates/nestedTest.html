@@ -1,0 +1,34 @@
+<!-- WITH SCOPE
+<div ng-controller="nestedController">
+    Country: {{name}}
+    <div ng-controller="stateController">
+        Country: {{$parent.name}} | State: {{name}}
+        <div ng-controller="cityController">
+            Country: {{$parent.$parent.name}} | State: {{$parent.name}} | City: {{name}}
+        </div>
+    </div>
+</div>
+-->
+
+<!-- WITH INIT
+<div ng-controller="nestedController" ng-init="countryName = name">
+    Country: {{countryName}}
+    <div ng-controller="stateController" ng-init="stateName = name">
+        Country: {{countryName}} | State: {{name}}
+        <div ng-controller="cityController" ng-init="cityName = name">
+            Country: {{countryName}} | State: {{stateName}} | City: {{cityName}}
+        </div>
+    </div>
+</div>
+-->
+
+<div ng-controller="nestedController as countryCtrl">
+    Country: {{countryCtrl.name}}
+    <div ng-controller="stateController as stateCtrl">
+        Country: {{countryCtrl.name}} | State: {{stateCtrl.name}}
+        <div ng-controller="cityController as cityCtrl">
+            Country: {{countryCtrl.name}} | State: {{stateCtrl.name}} | City: {{cityCtrl.name}}
+        </div>
+    </div>
+</div>
+
