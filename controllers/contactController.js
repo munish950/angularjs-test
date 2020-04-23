@@ -1,6 +1,7 @@
 app.controller("contactController", ['$scope', function($scope) {
     // $scope.contactForm = 'templates/contact.html';  
     $scope.genders = ['Male', 'Female'];
+    $scope.logs = [];
     $scope.users = [
         {name: "Peter", email: "preypeter@test.com", gender: "Male"},
         {name: "Ramson", email: "ramsongreg@west.com", gender: "Male"},
@@ -49,7 +50,33 @@ app.controller("contactController", ['$scope', function($scope) {
     
 
     $scope.onDelete = function (userIndex) {
-        console.log('Delete', userIndex);
         $scope.users.splice(userIndex,1);
     }
+    /*
+    $scope.$watch('users', function(newval, oldval){
+        const today = new Date();
+        const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        const key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        // Keep watch on users array
+        if(newval.length > oldval.length){            
+           $scope.logs.push({key: 'New Reclord inserted at: ' + time});
+        } else if(newval.length < oldval.length) {
+            $scope.logs.push({key: 'Record deleted at: ' + time});
+        }
+        
+    }, true);
+    */
+
+   $scope.$watchCollection('users', function(newval, oldval){
+        const today = new Date();
+        const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        const key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        // Keep watch on users array
+        if(newval.length > oldval.length){            
+        $scope.logs.push({key: 'New Reclord inserted at: ' + time});
+        } else if(newval.length < oldval.length) {
+            $scope.logs.push({key: 'Record deleted at: ' + time});
+        }        
+    });
+
 }]);

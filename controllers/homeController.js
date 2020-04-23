@@ -15,6 +15,7 @@ app.controller("homeController", function ($route, $scope) {
         {name: 'Rohan', age: 19, city: 'Delhi'},
         {name: 'Ritwik', age: 27, city: 'Hyderabad'},
         {name: 'Miller', age: 25, city: 'Noida'},
-        {name: 'Rohit', age: 20, city: 'Shimla'}
+        {name: 'Rohit', age: 20, city: 'Hyderabad'}
     ];
-})
+
+});
