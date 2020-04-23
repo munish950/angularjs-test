@@ -1,7 +1,6 @@
 app.controller("homeController", function ($route, $scope) {
    
     $scope.$on("$locationChangeStart", function (event, next, current) {
-        console.log('LALA');
         if(!confirm('Want navigate to ' + next + ' ?')) {
             event.preventDefault();
         }

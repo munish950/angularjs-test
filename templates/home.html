@@ -3,10 +3,7 @@
 
     <!--<div text-directive></div>-->
     <text-directive></text-directive>
-<!--
-    Create directory to process element and create dropdown list
--->
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="student in students">{{student.name}} | {{student.age}} | {{student.city}}</li>
-    </ul>
+
+    <h3>Student list via Directive</h3>
+    <select-directive items="students" filterCity='Hyderabad'></select-directive>
 </div>
