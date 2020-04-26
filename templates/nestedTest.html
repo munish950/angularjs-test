@@ -22,13 +22,14 @@
 </div>
 -->
 
-<div ng-controller="nestedController as countryCtrl">
-    Country: {{countryCtrl.name}}
+<div class="container" ng-controller="nestedController as countryCtrl">
+    Country: {{ctrl.name}}
     <div ng-controller="stateController as stateCtrl">
         Country: {{countryCtrl.name}} | State: {{stateCtrl.name}}
         <div ng-controller="cityController as cityCtrl">
             Country: {{countryCtrl.name}} | State: {{stateCtrl.name}} | City: {{cityCtrl.name}}
         </div>
     </div>
+    
 </div>
 

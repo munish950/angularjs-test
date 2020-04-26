@@ -1,7 +1,9 @@
-app.controller("contactController", ['$scope', function($scope) {
+app.controller("contactController", ['$scope', 'studentService', function($scope, studentService) {
     // $scope.contactForm = 'templates/contact.html';  
     $scope.genders = ['Male', 'Female'];
     $scope.logs = [];
+    $scope.users = studentService.getStudents;
+    /*
     $scope.users = [
         {name: "Peter", email: "preypeter@test.com", gender: "Male"},
         {name: "Ramson", email: "ramsongreg@west.com", gender: "Male"},
@@ -11,7 +13,7 @@ app.controller("contactController", ['$scope', function($scope) {
         {name: "Mini", email: "mini@cooper.com", gender: "Female"},
         {name: "George", email: "george@cooper.com", gender: null},
     ];
-    
+    */
     $scope.master = {name: "", email: "", gender: ""};
     $scope.reset = function() {
         $scope.name = angular.copy($scope.master.name);

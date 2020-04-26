@@ -1,13 +1,16 @@
-app.controller("homeController", function ($route, $scope) {
-   
-    $scope.$on("$locationChangeStart", function (event, next, current) {
+app.controller("homeController", ['$scope', '$route', 'studentService', 
+    function ($scope, $route, studentService) {
+    
+    $scope.$on("$locationChangeStart", function (event, next, current) {        
         if(!confirm('Want navigate to ' + next + ' ?')) {
             event.preventDefault();
         }
     });
-
     $scope.title = 'Home';
 
+    $scope.students = studentService.getStudents;
+
+    /*
     $scope.students = [
         {name: 'Peter', age: 21, city: 'Delhi'},
         {name: 'Mark', age: 24, city: 'Mumbai'},
@@ -17,5 +20,6 @@ app.controller("homeController", function ($route, $scope) {
         {name: 'Miller', age: 25, city: 'Noida'},
         {name: 'Rohit', age: 20, city: 'Hyderabad'}
     ];
+    */
 
-});
+}]);
