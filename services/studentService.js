@@ -1,4 +1,4 @@
-app.service('studentService', function() {
+app.factory('studentService', function() {
     let students = [
         {name: "Peter", email: "preypeter@test.com", gender: "Male", age: 21, city: 'Delhi'},
         {name: "Ramson", email: "ramsongreg@west.com", gender: "Male", age: 25, city: 'Delhi'},

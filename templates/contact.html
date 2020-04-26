@@ -46,6 +46,17 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-map-marker-alt"></i></div>
+                                </div>
+                                <select class="form-control" ng-model="city" name="city" ng-options="x for x in cities">
+                                    
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="text-center">
                             <button type="submit" ng-disabled="contactForm.$invalid" class="btn btn-info btn-block rounded-0 py-2">Submit</button>
                         </div>
